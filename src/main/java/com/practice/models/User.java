@@ -8,6 +8,13 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="users")
 public class User {
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                '}';
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
@@ -26,32 +33,36 @@ public class User {
         return id;
     }
 
-    public void setId(Integer id) {
+    public User setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public User setName(String name) {
         this.name = name;
+        return this;
     }
 
     public int getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public User setSalary(int salary) {
         this.salary = salary;
+        return this;
     }
 
     public String getTeamName() {
         return teamName;
     }
 
-    public void setTeamName(String teamName) {
+    public User setTeamName(String teamName) {
         this.teamName = teamName;
+        return this;
     }
 
     public User() {}
